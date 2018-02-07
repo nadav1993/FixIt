@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements IBidsBoardActivit
     public MainActivity() {
         animationHandler = new AnimationHandler();
         userProvider = new FacebookUserProvider();
-        injectDependencies();
     }
 
     @Override
@@ -71,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements IBidsBoardActivit
 
         loggedUser = (User) getIntent().getExtras().getSerializable(
                 getString(R.string.intent_logged_user));
-
+        injectDependencies();
         ImageView userImageView = (ImageView) findViewById(R.id.userPicture);
         TextView userNameView = (TextView) findViewById(R.id.userLabel);
 
@@ -260,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements IBidsBoardActivit
     }
 
     private void injectDependencies() {
-        bidDao = new FirebaseBidDao();
+        bidDao = new FirebaseBidDao(loggedUser.getName());
         problemDao = new FirebaseProblemDao();
         pictureCache = new MemoryPictureCache();
     }

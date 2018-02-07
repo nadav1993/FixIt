@@ -23,7 +23,7 @@ public class FirebaseProblemAdapter extends FirebaseListAdapter<Problem> {
 
     public FirebaseProblemAdapter(Activity activity, View listView, View progressBar) {
         super(activity, Problem.class, R.layout.problem_row,
-                FirebaseDatabase.getInstance().getReference().child(FIREBASE_PROBLEMS).orderByChild("date"));
+                FirebaseDatabase.getInstance().getReference().child(FIREBASE_PROBLEMS).orderByChild("time"));
 
         this.listView = listView;
         this.progressBar = progressBar;

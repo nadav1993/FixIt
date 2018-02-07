@@ -18,6 +18,16 @@ import java.util.List;
 
 public class FirebaseBidDao implements IBidDao {
     private static final String FIREBASE_BIDS = "bids";
+    private String loggedUserName;
+
+    public FirebaseBidDao(String loggedUserName)
+    {
+        this.loggedUserName = loggedUserName;
+    }
+
+    public FirebaseBidDao()
+    {
+    }
 
     @Override
     public void addBid(Bid bid) {
@@ -34,7 +44,10 @@ public class FirebaseBidDao implements IBidDao {
                 for (DataSnapshot entry : dataSnapshot.getChildren()) {
                     Bid bid = entry.getValue(Bid.class);
 
-                    bidList.add(bid);
+                    if (bid.getCostumerUserName().equals(loggedUserName))
+                    {
+                        bidList.add(bid);
+                    }
                 }
 
                 updater.update(bidList);
