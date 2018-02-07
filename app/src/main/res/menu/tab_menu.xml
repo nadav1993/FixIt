@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/problemsBoardTab"
+        android:icon="@mipmap/ic_news"
+        android:title="@string/problems_board_tab_label"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/problemTab"
+        android:icon="@mipmap/ic_report"
+        android:title="@string/problem_tab_label"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/bidsBoardTab"
+        android:icon="@mipmap/ic_forum"
+        android:title="@string/bids_board_tab_label"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/FixItTab"
+        android:icon="@mipmap/ic_map"
+        android:title="@string/fixit_tab_label"
+        app:showAsAction="always" />
+</menu>

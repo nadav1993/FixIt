@@ -1,0 +1,141 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context="com.hadarfem.fixit.fragments.ProblemFragment">
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:drawableLeft="@mipmap/ic_send"
+        android:gravity="left|center_vertical"
+        android:text="@string/send_button_label"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toRightOf="@+id/clearButton"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="0dp"
+        android:drawableLeft="@mipmap/ic_clear"
+        android:gravity="left|center_vertical"
+        android:text="@string/clear_button_label"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/sendButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/sendButton"
+        app:layout_constraintTop_toTopOf="@+id/sendButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/problemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/problem_title_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text_border"
+        android:gravity="top|left"
+        android:hint="@string/problem_title"
+        android:inputType="textShortMessage"
+        android:minHeight="@dimen/problem_description_min_height"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="@+id/descriptionProblemText"
+        app:layout_constraintTop_toBottomOf="@+id/problemTitle" />
+
+    <EditText
+        android:id="@+id/descriptionProblemText"
+        android:layout_width="0dp"
+        android:layout_height="92dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text_border"
+        android:gravity="top|right"
+        android:hint="@string/problem_description_placeholder"
+        android:inputType="textMultiLine|textLongMessage"
+        android:minHeight="@dimen/problem_description_min_height"
+        android:padding="10dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+    <Button
+        android:id="@+id/cameraButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@mipmap/ic_camera"
+        android:gravity="left|center_vertical"
+        android:text="@string/camera_button_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionProblemText" />
+
+    <ImageView
+        android:id="@+id/cameraImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/clearButton"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintLeft_toLeftOf="@+id/cameraButton"
+        app:layout_constraintRight_toRightOf="@+id/cameraButton"
+        app:layout_constraintTop_toBottomOf="@+id/cameraButton" />
+
+    <Spinner
+        android:id="@+id/citySpinner"
+        android:layout_width="174dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:spinnerMode="dialog"
+        android:tooltipText="@string/button_text_send"
+        app:layout_constraintEnd_toEndOf="@+id/descriptionProblemText"
+        app:layout_constraintStart_toEndOf="@+id/cameraButton"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionProblemText" />
+
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/citySpinner"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/citySpinner"
+        app:layout_constraintTop_toBottomOf="@+id/citySpinner" />
+
+</android.support.constraint.ConstraintLayout>

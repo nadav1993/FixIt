@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="problem_description_min_height">150dp</dimen>
+    <dimen name="user_picture_width">144px</dimen>
+    <dimen name="user_picture_height">144px</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>
