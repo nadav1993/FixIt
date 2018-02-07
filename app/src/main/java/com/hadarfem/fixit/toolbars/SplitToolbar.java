@@ -12,7 +12,6 @@ import android.view.ViewGroup;
  * Created by Tzach & Nadav on 2/6/2018.
  */
 
-// Comment for commit
 public class SplitToolbar extends Toolbar {
     public SplitToolbar(Context context) {
         super(context);
