@@ -119,7 +119,7 @@ public class SuggestPriceAcivity extends AppCompatActivity implements IBidActivi
                     .setMessage(validationResult.getValidationString())
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            // do nothing
+                        finish();
                         }
                     })
                     .setIcon(android.R.drawable.ic_dialog_alert)
@@ -132,17 +132,16 @@ public class SuggestPriceAcivity extends AppCompatActivity implements IBidActivi
 
         new AlertDialog.Builder(SuggestPriceAcivity.this)
                 .setTitle(SuggestPriceAcivity.this.getString(R.string.success_title))
-                .setMessage(SuggestPriceAcivity.this.getString(R.string.report_success_message))
+                .setMessage(SuggestPriceAcivity.this.getString(R.string.bid_success_message))
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        // do nothing
+                        finish();
                     }
                 })
                 .setIcon(android.R.drawable.ic_dialog_info)
                 .show();
 
         clear();
-        finish();
 
     }
 

@@ -89,7 +89,7 @@ public class ArrayBidAdapter extends ArrayAdapter<Bid> implements IBidFilterable
         }
 
         if (bidPriceView != null) {
-            bidPriceView.setText(Integer.toString(bid.getPrice()));
+            bidPriceView.setText(Integer.toString(bid.getPrice()) + "₪");
         }
 
         if (problemTitleView != null) {

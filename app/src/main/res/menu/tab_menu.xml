@@ -17,8 +17,8 @@
         android:title="@string/bids_board_tab_label"
         app:showAsAction="always" />
     <item
-        android:id="@+id/FixItTab"
-        android:icon="@mipmap/ic_map"
-        android:title="@string/fixit_tab_label"
+        android:id="@+id/fixitTab"
+        android:icon="@drawable/ic_fixit_name_new"
+        android:title="@string/bids_board_tab_label"
         app:showAsAction="always" />
 </menu>

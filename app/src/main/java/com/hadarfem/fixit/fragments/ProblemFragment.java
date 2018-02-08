@@ -214,7 +214,7 @@ public class ProblemFragment extends Fragment {
 
         new AlertDialog.Builder(getActivity())
                 .setTitle(getActivity().getString(R.string.success_title))
-                .setMessage(getActivity().getString(R.string.report_success_message))
+                .setMessage(getActivity().getString(R.string.problem_success_message))
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // do nothing
