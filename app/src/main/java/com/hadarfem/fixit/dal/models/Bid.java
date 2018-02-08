@@ -11,7 +11,7 @@ public class Bid {
     private String bidderUserName;
     private String costumerUserName;
     private String title;
-    private int price;
+    private String price;
     private Date date;
     private String pictureUrl;
 
@@ -60,11 +60,11 @@ public class Bid {
         return this;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public Bid setPrice(int price) {
+    public Bid setPrice(String price) {
         this.price = price;
         return this;
     }

@@ -7,7 +7,6 @@
     <string name="email_placeholder">name@example.com</string>
     <string name="password_placeholder">Password</string>
     <string name="problem_title_text">What do you want to fix?</string>
-    <string name="suggest_price_title_text">Give a bid</string>
     <string name="camera_button_label">Add Picture</string>
     <string name="clear_button_label">Clear</string>
     <string name="send_button_label">Send</string>

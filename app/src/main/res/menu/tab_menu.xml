@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/problemsBoardTab"
-        android:icon="@mipmap/ic_news"
+        android:icon="@mipmap/ic_problem_board"
         android:title="@string/problems_board_tab_label"
         app:showAsAction="always" />
     <item
         android:id="@+id/problemTab"
-        android:icon="@mipmap/ic_report"
+        android:icon="@mipmap/ic_problem"
         android:title="@string/problem_tab_label"
         app:showAsAction="always" />
     <item
         android:id="@+id/bidsBoardTab"
-        android:icon="@mipmap/ic_forum"
+        android:icon="@mipmap/ic_bid_board"
         android:title="@string/bids_board_tab_label"
         app:showAsAction="always" />
     <item
         android:id="@+id/fixitTab"
-        android:icon="@drawable/ic_fixit_name_new"
+        android:icon="@mipmap/ic_fixit_text"
         android:title="@string/bids_board_tab_label"
         app:showAsAction="always" />
 </menu>

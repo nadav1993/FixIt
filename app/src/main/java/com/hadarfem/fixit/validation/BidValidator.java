@@ -14,11 +14,15 @@ public class BidValidator implements IValidator<Bid> {
     public ValidationResult validate(Bid model) {
         List<String> errors = new ArrayList<>();
 
-        if (Integer.toString(model.getPrice()) == null) {
+        if (model.getPrice() == null) {
             errors.add("Price cannot be null");
-        } else if (Integer.toString(model.getPrice()).isEmpty()) {
+        } else if (model.getPrice().isEmpty()) {
             errors.add("Price cannot be empty");
         }
+        else if (!isNumeric(model.getPrice())) {
+            errors.add("Price cannot be string");
+        }
+
 
         if (model.getTitle() == null) {
             errors.add("Title cannot be null");
@@ -35,5 +39,18 @@ public class BidValidator implements IValidator<Bid> {
         } else {
             return new ValidationResult().setValid(false).setValidationErrors(errors);
         }
+    }
+
+    public boolean isNumeric(String str)
+    {
+        try
+        {
+            int d = Integer.parseInt(str);
+        }
+        catch(NumberFormatException nfe)
+        {
+            return false;
+        }
+        return true;
     }
 }

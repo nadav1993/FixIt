@@ -48,7 +48,7 @@ public class SuggestPriceAcivity extends AppCompatActivity implements IBidActivi
     String bidderUserName;
     String costumerUserName;
     String pictureUrlUser;
-    int price;
+    String price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +105,7 @@ public class SuggestPriceAcivity extends AppCompatActivity implements IBidActivi
     }
 
         public void sendBid() {
-        price = Integer.parseInt( bid_price.getText().toString());
+        price = bid_price.getText().toString();
 
         bid = new Bid().setId(UUID.randomUUID().toString()).setDate(new Date()).setTitle(problem_title.getText().toString()).
                 setPrice(price).setBidderUserName(bidderUserName).setCostumerUserName(costumerUserName).setPictureUrl(pictureUrlUser);
@@ -119,7 +119,6 @@ public class SuggestPriceAcivity extends AppCompatActivity implements IBidActivi
                     .setMessage(validationResult.getValidationString())
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                        finish();
                         }
                     })
                     .setIcon(android.R.drawable.ic_dialog_alert)

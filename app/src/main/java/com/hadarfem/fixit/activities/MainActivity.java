@@ -36,7 +36,6 @@ import com.hadarfem.fixit.models.User;
 import com.hadarfem.fixit.tasks.DownloadImageTask;
 import com.hadarfem.fixit.userProvider.FacebookUserProvider;
 import com.hadarfem.fixit.userProvider.IUserProvider;
-import com.google.android.gms.maps.MapView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -83,8 +82,6 @@ public class MainActivity extends AppCompatActivity implements IBidsBoardActivit
         if (userNameView != null) {
             userNameView.setText(loggedUser.getName());
         }
-
-        initializeGooglePlay();
     }
 
     @Override
@@ -262,25 +259,5 @@ public class MainActivity extends AppCompatActivity implements IBidsBoardActivit
         bidDao = new FirebaseBidDao(loggedUser.getName());
         problemDao = new FirebaseProblemDao();
         pictureCache = new MemoryPictureCache();
-    }
-
-    /*
-    Google Play hangs while loading (no way to run in the background)
-    Initialize it here so that future calls will not hang
-     */
-    private void initializeGooglePlay() {
-        // Fixing Later Map loading Delay
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    MapView dummyMapView = new MapView(getApplicationContext());
-                    dummyMapView.onCreate(null);
-                    dummyMapView.onPause();
-                    dummyMapView.onDestroy();
-                } catch (Exception ignored) {
-                }
-            }
-        }).start();
     }
 }
